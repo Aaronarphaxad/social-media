@@ -3,18 +3,6 @@ document.addEventListener('DOMContentLoaded', function() {
     // document.querySelector('#profile_view').addEventListener('click', loadProfile)
 });
 
-loggedInUser;
-
-if (loggedInUser == '') {
-    let editButton = document.querySelectorAll('.editButton')
-    editButton.forEach(button => {
-        button.style.display = "none";
-    })
-
-    document.getElementById('compose_view').style.display = "none";
-
-}
-
 document.querySelector('#allPosts').addEventListener('click', load_page());
 
 
@@ -52,7 +40,7 @@ function load_page() {
             let view = document.getElementById('post_view');
             // view.innerHTML = ""
             let allPosts = posts["data"]
-            loggedInUser = posts["loggedInUser"]
+            let loggedInUser = posts["loggedInUser"]
             for (let eachpost of allPosts) {
                 // create post element
                 let div = createElement('div', {
@@ -72,7 +60,7 @@ function load_page() {
 
 
                 // construct the post card
-                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="https://socialnetwork44.herokuapp.com/network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
+                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="socialnetwork44.herokuapp.com/network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
                 ${editButtonClass}
                 </span>
                 </div> 
@@ -88,7 +76,15 @@ function load_page() {
                 view.append(div)
 
                 console.log(loggedInUser)
+                if (loggedInUser == '') {
+                    let editButton = document.querySelectorAll('.editButton')
+                    editButton.forEach(button => {
+                        button.style.display = "none";
+                    })
 
+                    document.getElementById('compose_view').style.display = "none";
+
+                }
 
 
 
