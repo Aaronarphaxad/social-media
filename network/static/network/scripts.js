@@ -74,7 +74,7 @@ function load_page() {
                 view.append(div)
 
                 console.log(loggedInUser)
-                if (loggedInUser == '') {
+                if (loggedInUser == 'AnonymousUser') {
                     let editButton = document.querySelectorAll('.editButton')
                     editButton.forEach(button => {
                         button.style.display = "none";
