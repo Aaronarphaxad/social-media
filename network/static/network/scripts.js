@@ -65,9 +65,10 @@ function load_page() {
                 let date = time.slice(0, 10)
                 let newtime = time.slice(11, 16)
                 let url = getClientUrl();
+                console.log(url)
                 let editButtonClass = username === loggedInUser ? "edit" : ""
                     // construct the post card
-                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="http://${url}/network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
+                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="https://socialnetwork44.herokuapp.com/network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
                 ${editButtonClass}
                 </span>
                 </div> 
