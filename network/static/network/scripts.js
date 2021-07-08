@@ -79,12 +79,14 @@ function load_page() {
                     // append each post to view container
                 view.append(div)
 
-                if (!loggedInUser) {
+                if (loggedInUser === '') {
                     let editButton = document.querySelectorAll('.editButton')
 
                     editButton.forEach(button => {
                         button.style.display = "none";
                     })
+
+                    document.getElementById('compose_view').style.display = "none";
 
                 }
 
