@@ -80,7 +80,12 @@ function load_page() {
                 view.append(div)
 
                 if (!loggedInUser) {
-                    document.querySelectorAll('.editButton').style.display = "none";
+                    let editButton = document.querySelectorAll('.editButton')
+
+                    editButton.forEach(button => {
+                        button.style.display = "none";
+                    })
+
                 }
 
 
