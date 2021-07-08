@@ -8,13 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 document.querySelector('#allPosts').addEventListener('click', load_page());
-// Function to use with anchor tags
-function getClientUrl(env) {
-    if (env === "production") {
-        return `productionLink`
-    }
-    return `https://socialnetwork44.herokuapp.com`
-}
 
 
 let composeForm = document.querySelector('#compose-form');
@@ -67,7 +60,10 @@ function load_page() {
                 let url = getClientUrl();
                 console.log(url)
                 let editButtonClass = username === loggedInUser ? "edit" : ""
-                    // construct the post card
+
+
+
+                // construct the post card
                 div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="https://socialnetwork44.herokuapp.com/network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
                 ${editButtonClass}
                 </span>
@@ -82,6 +78,10 @@ function load_page() {
             `
                     // append each post to view container
                 view.append(div)
+
+                if (!loggedInUser) {
+                    document.getElementById('editButton').style.display = "none";
+                }
 
 
             }
