@@ -3,18 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // document.querySelector('#profile_view').addEventListener('click', loadProfile)
 });
 
-
-
-
-
 document.querySelector('#allPosts').addEventListener('click', load_page());
-// Function to use with anchor tags
-function getClientUrl(env) {
-    if (env === "production") {
-        return `productionLink`
-    }
-    return `http://socialnetwork44.herokuapp.com`
-}
 
 
 let composeForm = document.querySelector('#compose-form');
@@ -65,9 +54,13 @@ function load_page() {
                 let date = time.slice(0, 10)
                 let newtime = time.slice(11, 16)
                 let url = getClientUrl();
+                console.log(url)
                 let editButtonClass = username === loggedInUser ? "edit" : ""
-                    // construct the post card
-                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="http://${url}/network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
+
+
+
+                // construct the post card
+                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="socialnetwork44.herokuapp.com/network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
                 ${editButtonClass}
                 </span>
                 </div> 
@@ -81,6 +74,18 @@ function load_page() {
             `
                     // append each post to view container
                 view.append(div)
+
+                console.log(loggedInUser)
+                if (loggedInUser == '') {
+                    let editButton = document.querySelectorAll('.editButton')
+                    editButton.forEach(button => {
+                        button.style.display = "none";
+                    })
+
+                    document.getElementById('compose_view').style.display = "none";
+
+                }
+
 
 
             }
