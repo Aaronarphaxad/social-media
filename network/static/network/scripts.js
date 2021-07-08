@@ -53,7 +53,6 @@ function load_page() {
 
                 let date = time.slice(0, 10)
                 let newtime = time.slice(11, 16)
-                console.log(url)
                 let editButtonClass = username === loggedInUser ? "edit" : ""
 
 
