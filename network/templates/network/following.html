@@ -1,0 +1,86 @@
+{% extends 'network/layout.html' %}
+
+{% block body %}
+
+
+<div class="m-5 container">
+
+<h2> Posts by your friends</h2>
+
+
+
+{% for p in posts %}
+
+<div style="background-color:#fefdd1;" class="card my-3 p-3 shadow-sm">
+
+
+<div>@{{p.user}}
+
+</div>
+
+<div class="my-3">{{p.post}}</div>
+
+Posted on: {{p.time}} <hr>
+
+Likes: {{p.likes}}
+
+
+</div>
+
+
+
+
+
+
+
+{% empty %}
+    <div><h5> You're not following anyone so no posts to display :(</h5></div>
+
+
+{% endfor %}
+
+
+<!--Pagination-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        {% if posts.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+        {% endif %}
+        {% for i in posts.paginator.page_range %}
+          {% if posts.number == i %}
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+          {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if posts.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ posts.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <!--end of Pagination-->
+
+
+</div>
+
+
+
+
+{% endblock body %}

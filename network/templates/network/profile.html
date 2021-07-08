@@ -1,0 +1,133 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+
+
+<div id="profile_view" class="m-5 ml-3 mb-5">
+    <h2>Profile</h2><hr>
+
+
+<div class="card mb-3" style="max-width: 540px; background-color:#fefdd1;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="data:image/jpeg;base64,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" class="rounded card-img" width="155" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body ">
+        <h5 class="card-title">{{userdata.first_name}} {{userdata.last_name}}</h5>
+        <h6 class="mb-0 mt-0">@{{userdata.username}}</h6>
+        <div class="p-2 mt-2 d-flex justify-content-between rounded text-white stats">
+                    <div class="d-flex flex-column mr-2"> <span class="following">Following</span> <span class="number1">{{following}}</span> </div>
+                    <div class="d-flex flex-column mr-2"> <span class="followers">Followers</span> <span class="number2">{{followers}}</span>  <span class="rating">Likes</span> <span class="number1">{{likes}}</span></div>
+                    <div class="d-flex flex-column mr-2"> <span class="rating">Date Joined</span> <span class="number3">{{date}}</span> </div>
+                    {% comment %} <div class="d-flex flex-column mr-2"> <span class="rating">Likes</span> <span class="number1">{{likes}}</span> </div> {% endcomment %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% if userdata.username != current_user %}
+                <div class="d-flex justify-content-center ml-3 mb-2">
+                
+
+                
+                        {% if messages %}
+                        <form class="mt-2 d-inline button mr-2" action="{% url 'unfollow' userdata.id %}" method="POST">
+                        {% csrf_token %}
+                        <input class="btn btn-sm btn-primary w-100" value="Unfollow" type="submit" />
+                        <input type="hidden" name="unfollow" />
+                        </form>
+                        
+                        <button class="btn btn-sm btn-primary button d-inline p-1 mt-2 w-30"> Following </button>
+                        {% else %}
+                        <form class="mt-2 d-inline button" action="{% url 'follow' userdata.id %}" method="POST">
+                        {% csrf_token %}
+                            <input class="btn btn-sm btn-primary w-100" value="Follow" type="submit" />
+                            <input type="hidden" name={{userdata.username}} /> 
+                        </form>
+
+                        {% endif %}
+                </div>
+                {% endif %}
+</div>
+
+
+
+{% comment %} {% if userdata.username == current_user %}
+<div><span class="material-icons">
+edit
+</span></div>
+{% endif %} {% endcomment %}
+ <h2 class="mt-5">Posts</h2><hr>
+ <div id="profile_posts">
+    {% for post in posts %}
+    
+    <div style="background-color:#fefdd1;" class="card m-3 p-2 shadow-sm">
+      <div class="d-flex justify-content-between">
+       <span> @{{post.user.username }} </span> 
+       
+      </div>
+        <div class="mt-3 mb-3">{{post.post}}</div>
+        <div style="display:none;" id="editView">
+        <form id="{{post.id}}">
+        {% csrf_token %}
+        <textarea> </textarea>
+        <input type="submit" class="btn btn-sm btn-outline-primary" />
+        </form>
+        </div>
+
+        Date posted: {{post.time}}<hr>
+
+        Likes: {{post.likes}}
+    </div>
+    
+    {% empty %}
+    <div><h5> Sorry, no posts for this user yet :)</h5></div>
+    {% endfor %}
+
+
+
+
+
+    <!--Pagination-->
+    <nav aria-label="Page navigation example">
+      <ul class="pagination justify-content-center">
+        {% if posts.has_previous %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+          </li>
+        {% endif %}
+        {% for i in posts.paginator.page_range %}
+          {% if posts.number == i %}
+            <li class="page-item active" aria-current="page">
+              <span class="page-link">
+                {{ i }}
+                <span class="sr-only">(current)</span>
+              </span>
+            </li>
+          {% else %}
+            <li class="page-item"><a class="page-link" href="?page={{ i }}">{{ i }}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if posts.has_next %}
+          <li class="page-item">
+            <a class="page-link" href="?page={{ posts.next_page_number }}">Next</a>
+          </li>
+        {% else %}
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Next</a>
+          </li>
+        {% endif %}
+      </ul>
+    </nav>
+    <!--end of Pagination-->
+ </div>
+
+
+</div>
+
+
+{% endblock %}
