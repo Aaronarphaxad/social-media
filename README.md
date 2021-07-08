@@ -1,6 +1,6 @@
 # Social Media App
 
-Live Demo: https://vast-garden-98388.herokuapp.com/
+Live Demo: https://socialnetwork44.herokuapp.com/
 
 Youtube preview link: https://youtu.be/RpwAE6cMOXI
 
