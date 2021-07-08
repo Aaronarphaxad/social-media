@@ -80,7 +80,7 @@ function load_page() {
                 view.append(div)
 
                 if (!loggedInUser) {
-                    document.getElementById('editButton').style.display = "none";
+                    document.querySelectorAll('.editButton').style.display = "none";
                 }
 
 
