@@ -121,4 +121,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATIC_ROOT = "/http://socialnetwork44.herokuapp.com/static/"
+STATIC_ROOT = "/network/static/"
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+    '/network/static/',
+]
