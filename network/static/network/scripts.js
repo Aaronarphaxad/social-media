@@ -3,9 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // document.querySelector('#profile_view').addEventListener('click', loadProfile)
 });
 
+loggedInUser;
 
+if (loggedInUser == '') {
+    let editButton = document.querySelectorAll('.editButton')
+    editButton.forEach(button => {
+        button.style.display = "none";
+    })
 
+    document.getElementById('compose_view').style.display = "none";
 
+}
 
 document.querySelector('#allPosts').addEventListener('click', load_page());
 
@@ -44,7 +52,7 @@ function load_page() {
             let view = document.getElementById('post_view');
             // view.innerHTML = ""
             let allPosts = posts["data"]
-            let loggedInUser = posts["loggedInUser"]
+            loggedInUser = posts["loggedInUser"]
             for (let eachpost of allPosts) {
                 // create post element
                 let div = createElement('div', {
@@ -79,16 +87,9 @@ function load_page() {
                     // append each post to view container
                 view.append(div)
 
-                if (loggedInUser === '') {
-                    let editButton = document.querySelectorAll('.editButton')
+                console.log(loggedInUser)
 
-                    editButton.forEach(button => {
-                        button.style.display = "none";
-                    })
 
-                    document.getElementById('compose_view').style.display = "none";
-
-                }
 
 
             }
