@@ -13,7 +13,7 @@ function getClientUrl(env) {
     if (env === "production") {
         return `productionLink`
     }
-    return `http://socialnetwork44.herokuapp.com`
+    return `https://socialnetwork44.herokuapp.com`
 }
 
 
