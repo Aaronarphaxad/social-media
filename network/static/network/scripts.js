@@ -85,7 +85,6 @@ function load_page() {
                 }
 
 
-
             }
             // End of posts loop
 
