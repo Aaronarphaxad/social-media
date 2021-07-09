@@ -58,7 +58,7 @@ function load_page() {
 
 
                 // construct the post card
-                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="network/profile/${userId}">@${username}</a> <span  data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
+                div.innerHTML = `<div class="d-flex justify-content-between"><a style="text-decoration: none;" href="network/profile/${userId}">@${username}</a> <span style="background-color: #fefdd1;" data-id="${postId}" data-post="${post}" class="material-icons editButton" type="button" data-toggle="modal" data-target="#exampleModal">
                 ${editButtonClass}
                 </span>
                 </div> 
